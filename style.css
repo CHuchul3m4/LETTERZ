@@ -1,0 +1,382 @@
+/* CARTITAS PARA DARINE — estilo retro, neón y lleno de cariño */
+
+:root {
+  --pink: #ff00cc;
+  --yellow: #ffff00;
+  --cyan: #00ffff;
+  --green: #00ff55;
+  --blue: #0000aa;
+  --deep-blue: #000066;
+  --white: #fff;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 18px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 18px;
+  background-color: var(--pink);
+  background-image:
+    radial-gradient(var(--cyan) 2px, transparent 2px),
+    radial-gradient(var(--yellow) 2px, transparent 2px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  color: var(--yellow);
+  font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+}
+
+.wrapper {
+  position: relative;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: clamp(12px, 2.5vw, 26px);
+  overflow: hidden;
+  background: var(--blue);
+  border: 8px ridge #fff;
+  box-shadow: 0 0 0 5px #5b28ff, 0 0 24px #ff71ee;
+}
+
+.site-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 10px 0 22px;
+}
+
+#musicBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background: #ff70b8;
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px #ff70b855;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#musicBtn:hover {
+  background: #ff3f9f;
+  transform: scale(1.05);
+}
+
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 14px 0 20px;
+  color: var(--yellow);
+  font-size: clamp(42px, 8vw, 86px);
+  line-height: .9;
+  text-shadow: 5px 5px #ff0000, -4px -4px var(--cyan);
+  transform: rotate(-1deg);
+}
+
+.subtitle {
+  display: inline-block;
+  max-width: 100%;
+  padding: 10px 16px;
+  background: #ff0000;
+  border: 4px dashed var(--yellow);
+  color: var(--green);
+  font-weight: 900;
+  font-size: clamp(15px, 2.6vw, 25px);
+  transform: rotate(1deg);
+}
+
+.ticker {
+  margin: 20px 0 14px;
+  padding: 9px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #000;
+  border: 3px solid var(--green);
+  color: var(--green);
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+.ticker span {
+  display: inline-block;
+  min-width: 100%;
+  animation: ticker 22s linear infinite;
+}
+@keyframes ticker {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+.intro {
+  max-width: 720px;
+  margin: 18px auto;
+  color: #fff;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px auto 0;
+}
+.quick-nav a, .back-top {
+  display: inline-block;
+  padding: 8px 11px;
+  color: #000;
+  background: var(--yellow);
+  border: 3px outset #fff;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform .15s, filter .15s;
+}
+.quick-nav a:hover, .back-top:hover {
+  transform: rotate(-2deg) scale(1.04);
+  filter: brightness(1.15);
+}
+
+.letter-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.carta {
+  position: relative;
+  min-width: 0;
+  padding: 15px;
+  background: var(--deep-blue);
+  border: 5px ridge var(--cyan);
+  box-shadow: 4px 4px 0 #ff00cc;
+  scroll-margin-top: 16px;
+}
+
+.carta:nth-child(3n + 1) { border-color: #ff7df2; }
+.carta:nth-child(3n + 2) { border-color: var(--yellow); }
+.carta:nth-child(3n) { border-color: var(--green); }
+
+.carta-wide { grid-column: 1 / -1; }
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--yellow);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.card-number {
+  padding: 3px 7px;
+  color: #000;
+  background: var(--cyan);
+  border: 2px outset white;
+}
+
+.carta h2 {
+  margin: 9px 0 15px;
+  color: var(--cyan);
+  font-size: clamp(21px, 3vw, 29px);
+  text-align: center;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+  text-shadow: 2px 2px #ff00cc;
+}
+
+.message {
+  position: relative;
+  z-index: 1;
+  padding: clamp(14px, 2vw, 23px);
+  background: #fffdf7;
+  color: #171717;
+  border: 7px ridge #c0c0c0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.68;
+  overflow-wrap: anywhere;
+  box-shadow: 3px 3px 0 #777;
+}
+.message p { margin: 0 0 1em; }
+.message p:last-child { margin-bottom: 0; }
+.message blockquote {
+  margin: 0 0 1em;
+  padding-left: 13px;
+  border-left: 4px solid #ff00cc;
+}
+.message blockquote:last-child { margin-bottom: 0; }
+.signature {
+  margin-top: 1.2em !important;
+  color: #a00091;
+  font-weight: bold;
+  text-align: right;
+}
+
+.sticker {
+  float: right;
+  position: relative;
+  z-index: 2;
+  margin: 0 0 10px 12px;
+  padding: 10px;
+  border: 4px outset #fff;
+  color: #000;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+  transform: rotate(5deg);
+}
+.sticker-pink { background: #ff4bc8; }
+.sticker-green { background: var(--green); transform: rotate(-5deg); }
+.sticker-yellow { background: var(--yellow); transform: rotate(-4deg); }
+
+.card-footer {
+  clear: both;
+  padding-top: 14px;
+  color: var(--green);
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.rainbow-bar {
+  margin-top: 24px;
+  padding: 12px;
+  border: 4px dotted #fff;
+  color: #fff;
+  text-align: center;
+  font-size: clamp(20px, 4vw, 32px);
+  letter-spacing: 5px;
+  background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta);
+  text-shadow: 2px 2px #000;
+}
+
+.footer {
+  padding: 16px 0 8px;
+  color: var(--green);
+  text-align: center;
+}
+.footer p { margin: 9px 0; }
+.tiny {
+  color: #fff;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+}
+.back-top { margin-top: 10px; }
+
+.star {
+  position: absolute;
+  z-index: 0;
+  color: var(--yellow);
+  font-size: 44px;
+  pointer-events: none;
+}
+.star-one { top: 28px; left: 18px; transform: rotate(18deg); }
+.star-two { top: 85px; right: 20px; color: var(--cyan); transform: rotate(-15deg); }
+.star-three { top: 390px; left: 4px; color: #ff4bc8; }
+.star-four { bottom: 180px; right: 12px; color: var(--green); }
+
+@media (max-width: 760px) {
+  body { padding: 8px; }
+  .wrapper { padding: 12px; border-width: 5px; }
+  .letter-grid { grid-template-columns: 1fr; gap: 15px; }
+  .carta-wide { grid-column: auto; }
+  .carta { padding: 11px; }
+  .message { font-size: 16px; line-height: 1.6; padding: 14px; }
+  .quick-nav a { font-size: 12px; }
+  .star { opacity: .45; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker span { animation: none; }
+  *, *::before, *::after { transition: none !important; }
+}
+#pantallaEntrada {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffe0ef, #ffc1dc, #fff0f7);
+}
+
+#pantallaEntrada h1 {
+  color: #d63384;
+  font-size: clamp(28px, 6vw, 48px);
+}
+
+#pantallaEntrada p {
+  color: #8e3565;
+  font-size: 18px;
+}
+
+#abrirCarta {
+  padding: 14px 26px;
+  border: 2px solid white;
+  border-radius: 30px;
+  background: #ff70b8;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 14px #ff70b866;
+  transition: transform 0.2s, background 0.2s;
+}
+
+#abrirCarta:hover {
+  background: #ff3f9f;
+  transform: scale(1.05);
+}
+
+#pantallaEntrada[hidden] {
+  display: none;
+}
+
+
+.recuerdo {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.recuerdo img {
+  width: 100%;
+  max-width: 200px;
+  max-height: 240px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border: 3px solid #f5cddd;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #00000015;
+}
+
+.recuerdo p {
+  color: #c76d91;
+  font-size: 14px;
+  margin-top: 8px;
+  font-style: italic;
+}
